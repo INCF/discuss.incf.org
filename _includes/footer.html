@@ -126,7 +126,7 @@
 $(document).ready(function () {
   $.get("https://neurostars.org/top/monthly.rss", function(data) {
     var $XML = $(data);
-    $XML.find("item").each(function() {
+    $XML.find("item").slice(0,9).each(function() {
         var $this = $(this),
             item = {
                 title:       $this.find("title").text(),
